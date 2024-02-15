@@ -24,15 +24,25 @@ const ProductsController = {
             console.log(error)
         }
     },
+    // addProduct: async (req, res) => {
+    //     const { name, description, price, stock, user_id, category_id } = req.body;
+    //     if (!name || description || !price || !stock || !user_id || !category_id) {
+    //         res.status(400).json({ message: 'Please complete the fields' });
+    //         return;
+    //     }
+    //     await ProductsModel.createProduct(name, description, price, stock, user_id, category_id);
+
+    // },
     addProduct: async (req, res) => {
         const { name, description, price, stock, user_id, category_id } = req.body;
-        if (!name || description || !price || !stock || !user_id || !category_id) {
-            res.status(400).json({ message: 'Please complete the fields' });
+        if (!name || !description || !price || !stock || !user_id || !category_id) {
+            res.status(400).json({ message: 'Please complete all the fields' });
             return;
         }
         await ProductsModel.createProduct(name, description, price, stock, user_id, category_id);
-
+        res.status(201).json({ message: 'Product created successfully' });
     },
+    
     updateProduct: async (req, res) => {
         const id = req.params.id;
         const { name, description, price, stock, user_id, category_id } = req.body;
