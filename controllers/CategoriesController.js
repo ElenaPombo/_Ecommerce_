@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import CategoriesModel from '../models/mysql/CategoriesModel';
+import CategoriesModel from '../models/mysql/CategoriesModel.js';
 
 
 const CategoriesController = {
