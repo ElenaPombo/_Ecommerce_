@@ -42,17 +42,28 @@ const ProductsController = {
         await ProductsModel.createProduct(name, description, price, stock, user_id, category_id);
         res.status(201).json({ message: 'Product created successfully' });
     },
-    
+
+    // updateProduct: async (req, res) => {
+    //     const id = req.params.id;
+    //     const { name, description, price, stock, user_id, category_id } = req.body;
+    //     if (!name || description || !price || !stock || !user_id || !category_id) {
+    //         res.status(400).json({ message: 'Please complete the fields' });
+    //         return;
+    //     }
+    //     await ProductsModel.updateProduct(name, description, price, stock, user_id, category_id);
+
+    // },
     updateProduct: async (req, res) => {
         const id = req.params.id;
         const { name, description, price, stock, user_id, category_id } = req.body;
-        if (!name || description || !price || !stock || !user_id || !category_id) {
-            res.status(400).json({ message: 'Please complete the fields' });
+        if (!name || !description || !price || !stock || !user_id || !category_id) {
+            res.status(400).json({ message: 'Please complete all the fields' });
             return;
         }
-        await ProductsModel.updateProduct(name, description, price, stock, user_id, category_id);
-
+        await ProductsModel.updateProduct(id, name, description, price, stock, user_id, category_id);
+        res.status(200).json({ message: `Product with ID ${id} updated successfully` });
     },
+    
     deleteProduct: async (req, res) => {
         try {
             const id = req.params.id;

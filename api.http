@@ -32,4 +32,4 @@ Content-Type: application/json
 }
 
 ### Delete a products
-DELETE http://localhost:3000/products/3
+DELETE http://localhost:3000/products/4
