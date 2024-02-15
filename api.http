@@ -2,7 +2,7 @@
 GET http://localhost:3000/products
 
 ### Get a products by id
-GET http://localhost:3000/products/3
+GET http://localhost:3000/products/2
 
 
 ### Create a products
@@ -10,26 +10,26 @@ POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-    "name": "Cookie de pistacho",
-    "description": "Cookie de pistacho: deliciosa combinación de chocolate blanco y la textura crujiente de los pistachos",
-    "price": 3.20,
-    "stock": 20,
+    "name": "Muffin de fresas",
+    "description": "Tiernos bocados horneados con trozos jugosos de fresas frescas, perfectamente mezclados en una masa esponjosa y aromática, ideales para deleitar el paladar en cualquier momento del día.",
+    "price": 3.60,
+    "stock": 15,
     "user_id": 2,
-    "category_id": 1
+    "category_id": 2
 }
 
 ### Update a products
-PUT http://localhost:3000/products/4
+PUT http://localhost:3000/products/
 Content-Type: application/json
 
 {
     "name": "Cookie de pistacho",
     "description": "Cookie de pistacho: deliciosa combinación de chocolate blanco y la textura crujiente de los pistachos",
-    "price": 3.40,
+    "price": 3.00,
     "stock": 25,
     "user_id": 2,
     "category_id": 1
 }
 
 ### Delete a products
-DELETE http://localhost:3000/products/4
+DELETE http://localhost:3000/products/7

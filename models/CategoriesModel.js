@@ -1,4 +1,4 @@
-import { connection } from "../../database/config";
+import { connection } from "../database/config.js";
 
 const CategoriesModel = {
     getAllCategories: async () => {
