@@ -5,7 +5,7 @@ const CONFIG = {
     port: 3306,
     user: 'root',
     password: '',
-    database: 'ecommerce2'
+    database: 'ecommerce'
 };
 
 export const connection = createPool(CONFIG);

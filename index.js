@@ -12,13 +12,13 @@
 //     console.log(`Example app listening on port ${PORT}`)    
 // }) 
 import express from 'express';
-import { connection } from './database/config';
-import BookRouter from './routes/BookRouter';
+import { connection } from './database/config.js';
+import ProductsRouter from './routes/ProductsRouter.js';
 
 const app = express();
 const port = 3000;
 
-app.use("/books/", BookRouter);
+app.use("/products/", ProductsRouter);
 // app.use("/users/", UserRouter);
 
 app.listen(port, () => {

@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
-import ProductsModel from '../models/mysql/ProductsModel';
+import { request, response } from 'express';
+import ProductsModel from '../models/ProductsModel.js'
 
 
 const ProductsController = {
