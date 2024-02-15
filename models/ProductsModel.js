@@ -5,7 +5,7 @@ const ProductsModel = {
         const [result, metadata] = await connection.query('SELECT * FROM products');
         return result;
     },
-    getAllProduct: async (id) => {
+    getProduct: async (id) => {
         const [result, metadata] = await connection.query(`SELECT * FROM products WHERE id = ${id}`);
         return result;
     },
