@@ -1,27 +1,35 @@
 ### Get all 
-GET http://localhost:3000/categories
+GET http://localhost:3000/users
 
 ### Get by id
-GET http://localhost:3000/categories/3
+GET http://localhost:3000/users/2
 
 
 ### Create
-POST http://localhost:3000/categories
+POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "name": "Tartas"
+   "name": "Elena",
+   "email": "elena@example.com",
+   "password": "password124",
+   "rol": "admin",
+   "status":"1"
 
 }
 
 ### Update
-PUT http://localhost:3000/categories/4
+PUT http://localhost:3000/users/3
 Content-Type: application/json
 
 {
-    "name": "Tarta"
+    "name": "Paca",
+   "email": "paca@example.com",
+   "password": "password124",
+   "rol": "admin",
+   "status":"1"
     
 }
 
 ### Delete
-DELETE http://localhost:3000/categories/4
+DELETE http://localhost:3000/users/3
