@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
-import UsersModel from '../models/mysql/UsersModel';
+import { request, response } from 'express';
+import UsersModel from '../models/UsersModel';
 
 
 const UsersController = {
@@ -11,15 +11,15 @@ const UsersController = {
             console.log(error)
         }
     },
-    getProduct: async (req, res) => {
+    getUser: async (req, res) => {
         try {
             const id = req.params.id;
             const user = await UsersModel.getUser(id);
-            if (!Array.isArray(product) || product.length === 0) {
+            if (!Array.isArray(user) || user.length === 0) {
                 res.status(404).json({ message: `User with id ${id} not found` });
                 return;
             }
-            res.json(product);
+            res.json(user);
         } catch (error) {
             console.log(error)
         }
@@ -30,14 +30,14 @@ const UsersController = {
             res.status(400).json({ message: 'Please complete the fields' });
             return;
         }
-        await UsersModel.createProduct(name, email, password, rol, status);
+        await UsersModel.createUser(name, email, password, rol, status);
 
     },
-    updateProduct: async (req, res) => {
+    updateUser: async (req, res) => {
         const id = req.params.id;
         const { name, email, password, rol, status } = req.body;
         if (!name || email || !password || !rol || !status) {
-            res.status(400).json({ message: 'Please complete the fields' });
+            res.status(400).json({ message: 'Please fill the fields' });
             return;
         }
         await UsersModel.updateUser(name, email, password, rol, status);

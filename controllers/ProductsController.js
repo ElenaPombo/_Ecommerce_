@@ -28,18 +28,18 @@ const ProductsController = {
     addProduct: async (req, res) => {
         const { name, description, price, stock, user_id, category_id } = req.body;
         if (!name || !description || !price || !stock || !user_id || !category_id) {
-            res.status(400).json({ message: 'Please complete all the fields' });
+            res.status(400).json({ message: 'Please fill all fields' });
             return;
         }
         await ProductsModel.createProduct(name, description, price, stock, user_id, category_id);
-        res.status(201).json({ message: 'Product created successfully' });
+        res.status(201).json({ message: 'Product added successfully' });
     },
 
     updateProduct: async (req, res) => {
         const id = req.params.id;
         const { name, description, price, stock, user_id, category_id } = req.body;
         if (!name || !description || !price || !stock || !user_id || !category_id) {
-            res.status(400).json({ message: 'Please complete all the fields' });
+            res.status(400).json({ message: 'Please fill all fields' });
             return;
         }
         await ProductsModel.updateProduct(id, name, description, price, stock, user_id, category_id);

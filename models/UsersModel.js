@@ -1,6 +1,6 @@
-import { connection } from "../../database/config";
+import { connection } from "../database/config.js";
 
-const ProductsModel = {
+const UsersModel = {
     getAllUsers: async () => {
         const [result, metadata] = await connection.query('SELECT * FROM users');
         return result;

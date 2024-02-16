@@ -5,18 +5,19 @@ const CategoriesModel = {
         const [result, metadata] = await connection.query('SELECT * FROM categories');
         return result;
     },
-    getAllCategory: async (id) => {
+    getCategory: async (id) => {
         const [result, metadata] = await connection.query(`SELECT * FROM categories WHERE id = ${id}`);
         return result;
     },
     createCategory: async (name) => {
-        const [result, metadata] = await connection.query(`INSERT INTO categories (name}')`);
+        const [result, metadata] = await connection.query(`INSERT INTO categories (name) VALUES (?)` , [name]);
         return result;
     },
-    updateCategory: async (name, description, price, stock, user_id, category_id) => {
-        const [result, metadata] = await connection.query(`INSERT INTO categories (name}')`);
+    updateCategory: async (id, name) => {
+        const [result, metadata] = await connection.query(`UPDATE categories SET name = ? WHERE id = ?`, [name, id]);
         return result;
     },
+    
     deleteCategory: async (id) => {
         const [result, metadata] = await connection.query(`DELETE FROM categories WHERE id = ${id}`);
         return result;

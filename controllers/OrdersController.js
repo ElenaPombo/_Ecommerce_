@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
-import OrdersModel from '../models/mysql/OrdersModel';
+import { request, response } from 'express';
+import OrdersModel from '../models/OrdersModel';
 
 const OrdersController = {
     getAllOrders: async (req, res) => {
