@@ -59,8 +59,12 @@ const UsersController = {
             return;
         }
         try {
-            const user = await UsersModel.login(email, password,rol);
-            res.json(user);
+            const user = await UsersModel.loginUser(email, password,rol);
+            if (user.length > 0) {
+                res.json(user);
+            } else {
+                res.status(401).json({ message: 'Incorrect login credentials' });
+            }
         } catch (error) {
             console.log(error)
         }

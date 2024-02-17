@@ -6,20 +6,19 @@ GET http://localhost:3000/users/2
 
 
 ### Create
-POST http://localhost:3000/users
+POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-   "name": "Elena",
-   "email": "elena@example.com",
+
+   "email": "paca@example.com",
    "password": "password124",
-   "rol": "admin",
-   "status":"1"
+   "rol": "admin"
 
 }
 
 ### Update
-PUT http://localhost:3000/users/3
+PUT http://localhost:3000/users/5
 Content-Type: application/json
 
 {
@@ -32,4 +31,4 @@ Content-Type: application/json
 }
 
 ### Delete
-DELETE http://localhost:3000/users/3
+DELETE http://localhost:3000/users/5
