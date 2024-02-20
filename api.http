@@ -1,8 +1,7 @@
 ### Get all 
-GET http://localhost:3000/users
-
+GET http://localhost:3000/products
 ### Get by id
-GET http://localhost:3000/users/2
+GET http://localhost:3000/products/2
 
 
 ### Create
@@ -11,14 +10,16 @@ Content-Type: application/json
 
 {
 
-   "email": "paca@example.com",
+  
+   "email": "patolucas@example.com",
    "password": "password124",
    "rol": "admin"
+   
 
 }
 
 ### Update
-PUT http://localhost:3000/users/5
+PUT http://localhost:3000/users/6
 Content-Type: application/json
 
 {
@@ -31,4 +32,4 @@ Content-Type: application/json
 }
 
 ### Delete
-DELETE http://localhost:3000/users/5
+DELETE http://localhost:3000/products/5
